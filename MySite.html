@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<title>Ankur Nahar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('me.jpg');
+  min-height: 100%;
+}
+
+/* Contact text size*/
+@media screen and (min-width: 801px) {
+  span.con {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  span.con {
+    font-size: 16px;
+  }
+}
+
+/* to animate image */
+.ishake:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+<body onload="typeWriter()">
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#projects" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Projects</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#art" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Art Work</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b id="demo"></b></h1>
+    <p>Aspiring Android & Web Developer.</p>
+    <img src="me.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="me.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    <form method="get" action="AnkurNahar.pdf">
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" type="submit">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    </form>
+  </header>
+
+  
+
+  <!-- Projects Section -->
+  <div class="w3-padding-32 w3-content" id="projects">
+    <h2 class="w3-text-grey">My Projects</h2>
+    <hr class="w3-opacity">
+
+   <!-- Grid -->
+   <div class="w3-container">
+   <div class="w3-row">
+    <div class="w3-center">
+      
+    
+     <a href="https://github.com/AnkurNahar/DessertHub"><div class="w3-col m6 w3-light-grey w3-container w3-padding-16 w3-hover-opacity">
+      <h3>Dessert-Hub</h3>
+      <p>An android, online dessert cook-book for adding and sharing recipies, with features such as user authentication, timer(for cook time), dessert catagories, etc.</p>
+    </div></a>
+
+    <a href="https://github.com/AnkurNahar/Blog-Site"></a><div class="w3-col m6 w3-grey w3-container w3-padding-16 w3-hover-opacity">
+      <h3>My Blog</h3>
+      <p>A blog site built using PHP Laravel framework, with user authentication, as well as admin panel, where you can add, delete, update and read posts.</p>
+    </div></a>
+    </div>
+   </div>
+
+    <div class="w3-row">
+      <div class="w3-center">
+    <a href="https://github.com/AnkurNahar/FoodHub"></a><div class="w3-col m6 w3-dark-grey w3-container w3-padding-16 w3-hover-opacity">
+      <h3>Food-Hub</h3>
+      <p>A food ordering website, shopping cart, resturant rating system, search and sort options, and an easy to use admin panel for database managment.</p>
+    </div></a>
+
+    <a href="https://github.com/AnkurNahar/Simple-Calculator"></a><div class="w3-col m6 w3-black w3-container w3-padding-16 w3-hover-opacity">
+      <h3>MyCalculator</h3>
+      <p>A website for simple arethmatic calculations that saves users calculation history locally in browser using just HTML-CSS, Bootstrap and JavaScript.</p>
+    </div></a>
+    </div>
+    <!-- End Grid -->
+  </div>
+  </div>
+  <!-- End Projects Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About Me</h2>
+    <hr class="w3-opacity">
+    <p>Hi, I'm Ankur Nahar from Dhaka, Bangladesh and I love to create for web and mobile devices! After completeing my bachelor's degree in Computer Science from BRAC University in 2018, I have worked on a number of my own personal Android and Web projects. I like to keep my designs user-centered and focus on topography, content and conveying the designated message. As an aspiring developer, I enjoy creating applications to run across devices using the latest technologies available. </p>
+    <p>Besides Android and Web Development, I have a great affinity for arts and crafts, and thoroughly enjoy a good book! </p>
+    
+  <!-- End About Section -->
+  </div>
+
+  <!-- Art Section -->
+  <div class="w3-padding-32 w3-content" id="art">
+    <h2 class="w3-text-grey">My Art Work</h2>
+    <hr class="w3-opacity">
+
+  <!-- Photo Grid -->
+  <div class="w3-row-padding w3-grayscale" id="myGrid" style="margin:0 -16px">
+    <div class="w3-third">
+      <img src="pic1.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+      <img src="pic4.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+      <img src="pic7.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+    </div>
+  
+    <div class="w3-third">
+      <img src="pic2.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+      <img src="pic5.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+      <img src="pic8.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+    </div>
+
+    <div class="w3-third">
+        <img src="pic3.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+        <img src="pic6.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+        <img src="pic9.jpg" alt="" style="width:100%" class="w3-hover-opacity ishake" onclick="onClick(this)">
+    </div>
+    <!-- End Photo Grid -->
+  </div>
+  <!-- End Projects Section -->
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:128px">
+    <h2>Contact Me</h2>
+    <hr class="w3-opacity">
+
+
+    <div class="w3-row w3-section">
+      <div class="w3-col m6 w3-container">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i><span class="con">Dhaka, Bangladesh</span><br>
+          <i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i><span class="con">Phone: +880 1779198084</span><br>
+          <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i><span class="con">ankurnahar.an@gmail.com</span><br>
+        </div>
+      </div>
+      
+      <div class="w3-col m6 w3-container">
+        <span>Lets get in touch. Send me a message:</span><br>
+        <form action="" target="_self" onsubmit="mymsg()">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-light-grey w3-padding-large w3-right w3-section">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+      <!-- End Contact Section -->
+    </div>
+
+    
+  
+  </div>  
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <a href="https://github.com/AnkurNahar"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://plus.google.com/u/0/+AnkurNahar11956"><i class="fa fa-google-plus w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/bored_n_hungry/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.pinterest.com/ankurnaharan/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <p class="w3-medium">Created by <a href="https://plus.google.com/u/0/+AnkurNahar11956" target="_blank" class="w3-hover-text-green">Ankur Nahar</a></p>
+  <!-- End footer -->
+  </footer>
+  
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+// Name Typewriter Effect
+var i = 0;
+var txt = "Ankur Nahar"; /* The text */
+var speed = 150; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("caption").innerHTML = element.alt;
+  document.getElementById("myModal").style.display = "block";  
+}
+
+
+
+
+
+// When the user clicks on <span> (x), close the modal
+function closeModal() { 
+  document.getElementById("myModal").style.display = "none";
+}
+function mymsg() {
+  alert("Sorry! Database under construction.");
+
+}
+
+</script>
+
+</body>
+</html>
